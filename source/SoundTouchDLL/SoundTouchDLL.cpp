@@ -58,7 +58,7 @@
 #include "SoundTouch.h"
 #include "BPMDetect.h"
 
-using namespace soundtouch;
+using namespace liteav_soundtouch;
 
 #ifdef SOUNDTOUCH_INTEGER_SAMPLES
     #error "error - compile the dll version with float samples"

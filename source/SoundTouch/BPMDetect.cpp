@@ -58,7 +58,7 @@
 #include "PeakFinder.h"
 #include "BPMDetect.h"
 
-using namespace soundtouch;
+using namespace liteav_soundtouch;
 
 // algorithm input sample block size
 static const int INPUT_BLOCK_SIZE = 2048;
@@ -132,7 +132,7 @@ static const double TWOPI = (2 * M_PI);
 #endif
 
 // Hamming window
-void hamming(float *w, int N)
+void liteav_hamming(float *w, int N)
 {
     for (int i = 0; i < N; i++)
     {
@@ -217,9 +217,9 @@ BPMDetect::BPMDetect(int numChannels, int aSampleRate) :
 
     // calculate hamming windows
     hamw = new float[XCORR_UPDATE_SEQUENCE];
-    hamming(hamw, XCORR_UPDATE_SEQUENCE);
+    liteav_hamming(hamw, XCORR_UPDATE_SEQUENCE);
     hamw2 = new float[XCORR_UPDATE_SEQUENCE / 2];
-    hamming(hamw2, XCORR_UPDATE_SEQUENCE / 2);
+    liteav_hamming(hamw2, XCORR_UPDATE_SEQUENCE / 2);
 }
 
 
@@ -493,7 +493,7 @@ void BPMDetect::removeBias()
 
 
 // Calculate N-point moving average for "source" values
-void MAFilter(float *dest, const float *source, int start, int end, int N)
+void liteav_MAFilter(float *dest, const float *source, int start, int end, int N)
 {
     for (int i = start; i < end; i++)
     {
@@ -529,7 +529,7 @@ float BPMDetect::getBpm()
     // Smoothen by N-point moving-average
     float *data = new float[windowLen];
     memset(data, 0, sizeof(float) * windowLen);
-    MAFilter(data, xcorr, windowStart, windowLen, MOVING_AVERAGE_N);
+    liteav_MAFilter(data, xcorr, windowStart, windowLen, MOVING_AVERAGE_N);
 
     // find peak position
     peakPos = peakFinder.detectPeak(data, windowStart, windowLen);

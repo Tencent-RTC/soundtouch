@@ -62,14 +62,14 @@
 static uint _dwDisabledISA = 0x00;      // 0xffffffff; //<- use this to disable all extensions
 
 // Disables given set of instruction extensions. See SUPPORT_... defines.
-void disableExtensions(uint dwDisableMask)
+void liteav_disableExtensions(uint dwDisableMask)
 {
     _dwDisabledISA = dwDisableMask;
 }
 
 
 /// Checks which instruction set extensions are supported by the CPU.
-uint detectCPUextensions(void)
+uint liteav_detectCPUextensions(void)
 {
 /// If building for a 64bit system (no Itanium) and the user wants optimizations.
 /// Return the OR of SUPPORT_{MMX,SSE,SSE2}. 11001 or 0x19.

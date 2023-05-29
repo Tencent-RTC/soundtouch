@@ -46,7 +46,7 @@
 #ifdef SOUNDTOUCH_ALLOW_MMX
 // MMX routines available only with integer sample type
 
-using namespace soundtouch;
+using namespace liteav_soundtouch;
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -113,8 +113,12 @@ double TDStretchMMX::calcCrossCorr(const short *pV1, const short *pV2, double &d
     normaccu = _mm_add_pi32(normaccu, _mm_srli_si64(normaccu, 32));
     norm = _m_to_int(normaccu);
 
+// win 下这里把 |_m_empty()| 放到下面执行，否则 clang 优化后
+// |_m_to_int| 和 |_m_empty()| 的执行顺序会反掉，原因不明，放到下面也不影响代码逻辑
+#ifndef _WIN32
     // Clear MMS state
     _m_empty();
+#endif
 
     if (norm > (long)maxnorm)
     {
@@ -125,6 +129,11 @@ double TDStretchMMX::calcCrossCorr(const short *pV1, const short *pV2, double &d
             maxnorm = norm;
         }
     }
+
+#ifdef _WIN32
+    // Clear MMS state
+    _m_empty();
+#endif
 
     // Normalize result by dividing by sqrt(norm) - this step is easiest 
     // done using floating point operation
@@ -391,6 +400,6 @@ uint FIRFilterMMX::evaluateFilterStereo(short *dest, const short *src, uint numS
 #else
 
 // workaround to not complain about empty module
-bool _dontcomplain_mmx_empty;
+bool _liteav_dontcomplain_mmx_empty;
 
 #endif  // SOUNDTOUCH_ALLOW_MMX

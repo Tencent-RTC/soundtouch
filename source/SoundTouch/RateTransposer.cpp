@@ -41,7 +41,7 @@
 #include "InterpolateShannon.h"
 #include "AAFilter.h"
 
-using namespace soundtouch;
+using namespace liteav_soundtouch;
 
 // Define default interpolation algorithm here
 TransposerBase::ALGORITHM TransposerBase::algorithm = TransposerBase::CUBIC;

@@ -73,14 +73,14 @@
 #include "RateTransposer.h"
 #include "cpu_detect.h"
 
-using namespace soundtouch;
+using namespace liteav_soundtouch;
     
 /// test if two floating point numbers are equal
 #define TEST_FLOAT_EQUAL(a, b)  (fabs(a - b) < 1e-10)
 
 
 /// Print library version string for autoconf
-extern "C" void soundtouch_ac_test()
+extern "C" void liteav_soundtouch_ac_test()
 {
     printf("SoundTouch Version: %s\n",SOUNDTOUCH_VERSION);
 } 

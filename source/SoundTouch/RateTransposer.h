@@ -45,7 +45,7 @@
 
 #include "STTypes.h"
 
-namespace soundtouch
+namespace liteav_soundtouch
 {
 
 /// Abstract base class for transposer implementations (linear, advanced vs integer, float etc)

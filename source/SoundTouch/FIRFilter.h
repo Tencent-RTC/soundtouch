@@ -38,7 +38,7 @@
 #include <stddef.h>
 #include "STTypes.h"
 
-namespace soundtouch
+namespace liteav_soundtouch
 {
 
 class FIRFilter 

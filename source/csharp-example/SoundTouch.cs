@@ -34,7 +34,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace soundtouch
+namespace liteav_soundtouch
 {
     public sealed class SoundTouch : IDisposable
     {
