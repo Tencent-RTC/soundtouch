@@ -43,7 +43,7 @@
 
 #include "FIFOSampleBuffer.h"
 
-using namespace soundtouch;
+using namespace liteav_soundtouch;
 
 // Constructor
 FIFOSampleBuffer::FIFOSampleBuffer(int numChannels)

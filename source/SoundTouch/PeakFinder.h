@@ -33,7 +33,7 @@
 #ifndef _PeakFinder_H_
 #define _PeakFinder_H_
 
-namespace soundtouch
+namespace liteav_soundtouch
 {
 
 class PeakFinder

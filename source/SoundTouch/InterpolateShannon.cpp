@@ -38,7 +38,7 @@
 #include "InterpolateShannon.h"
 #include "STTypes.h"
 
-using namespace soundtouch;
+using namespace liteav_soundtouch;
 
 
 /// Kaiser window with beta = 2.0

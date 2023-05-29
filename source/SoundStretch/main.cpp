@@ -38,7 +38,7 @@
 #include "SoundTouch.h"
 #include "BPMDetect.h"
 
-using namespace soundtouch;
+using namespace liteav_soundtouch;
 using namespace std;
 
 // Processing chunk size (size chosen to be divisible by 2, 4, 6, 8, 10, 12, 14, 16 channels ...)

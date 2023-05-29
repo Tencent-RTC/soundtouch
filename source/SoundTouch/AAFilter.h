@@ -40,7 +40,7 @@
 #include "STTypes.h"
 #include "FIFOSampleBuffer.h"
 
-namespace soundtouch
+namespace liteav_soundtouch
 {
 
 class AAFilter

@@ -32,7 +32,7 @@ static string _errMsg = "";
 #define BUFF_SIZE 4096
 
 
-using namespace soundtouch;
+using namespace liteav_soundtouch;
 
 
 // Set error message to return

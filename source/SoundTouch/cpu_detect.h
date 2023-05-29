@@ -47,9 +47,9 @@
 /// Checks which instruction set extensions are supported by the CPU.
 ///
 /// \return A bitmask of supported extensions, see SUPPORT_... defines.
-uint detectCPUextensions(void);
+uint liteav_detectCPUextensions(void);
 
 /// Disables given set of instruction extensions. See SUPPORT_... defines.
-void disableExtensions(uint wDisableMask);
+void liteav_disableExtensions(uint wDisableMask);
 
 #endif  // _CPU_DETECT_H_
